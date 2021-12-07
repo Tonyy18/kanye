@@ -9,7 +9,6 @@ class Button extends Component {
 	}
 }
 class ButtonBox extends Component {
-	
 	render() {
 		return (
 			<div className="box">

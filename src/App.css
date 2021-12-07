@@ -45,7 +45,6 @@
 .box .wordFilter {
     text-align: left;
     font-size: 18px;
-    padding-bottom: 10px;
 }
 .count {
     font-size: 18px;
@@ -58,4 +57,28 @@
 }
 .quotes h1 {
     font-size: 25px;
+}
+
+.quotes .quote {
+	display: flex;
+	align-items: center;
+	border: 1px solid #E2E2E2;
+	padding: 0 15px;
+}
+.quotes .quote {
+	width: 400px;
+	margin-bottom: 15px;
+}
+.quotes .quote p {
+	font-size: 16px;
+	flex-grow: 1;
+}
+.quotes .quote button {
+	margin-left: 15px;
+	padding: 5px 10px;
+	background-color: transparent;
+	border: 1px solid #E2E2E2;
+}
+.quotes .quote button:hover {
+	border: 1px solid black;
 }
