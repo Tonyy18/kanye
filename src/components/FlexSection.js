@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import "../App.css"
+import usage from "../usage";
 
 class Button extends Component {
 	render() {
@@ -8,17 +9,19 @@ class Button extends Component {
 		)
 	}
 }
-class ButtonBox extends Component {
-	render() {
-		return (
-			<div className="box">
-				<div>
-					<Button text="Fetch 1 quote"></Button>
-					<Button text="Delete all quotes"></Button>
-				</div>
-			</div>
-		)
+const ButtonBox = () => {
+	const addQuote = {usage};
+	const clicked = () => {
+		addQuote("moi");
 	}
+	return (
+		<div className="box">
+			<div>
+				<Button text="Fetch 1 quote" onClick={clicked}></Button>
+				<Button text="Delete all quotes"></Button>
+			</div>
+		</div>
+	)
 }
 class WordCount extends Component {
 	render() {

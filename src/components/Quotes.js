@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../App.css";
+import usage from "../usage";
 
 class DeleteButton extends Component {
 	render() {
@@ -20,18 +21,16 @@ class Quote extends Component {
 	}
 }
 
-class QuotesPanel extends Component {
-	render() {
-		return (
-			<div className="quotes">
-				<h1>Quotes</h1>
-				<Quote quoteText="Quote" />
-				<Quote quoteText="Quote" />
-				<Quote quoteText="Quote" />
-				<Quote quoteText="Quote" />
-			</div>
-		)
-	}
+const QuotesPanel = () => {
+	const {quotes} = usage();
+	return (
+		<div className="quotes">
+			<h1>Quotes</h1>
+			{quotes.map((quote) => {
+				return (<Quote quoteText={quote} />)
+			})}
+		</div>
+	)
 }
 
 export default QuotesPanel
