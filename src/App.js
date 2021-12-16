@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import FlexSection from "./components/FlexSection";
-import './App.css';
 import Quotes from "./components/Quotes";
 
 class App extends Component {

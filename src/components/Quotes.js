@@ -1,5 +1,4 @@
 import React, { Component, useContext } from "react";
-import "../App.css";
 import usage from "../usage";
 
 const DeleteButton = (props) => {
