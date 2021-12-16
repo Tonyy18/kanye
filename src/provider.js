@@ -4,7 +4,9 @@ const AppContext = createContext([{}, () => {}])
 
 const AppProvider = ({children}) => {
 	const [state, setState] = useState({
-		quotes: ["quote", "quote2"]
+		quotes: [],
+		show: [],
+		filtered: false
 	});
 	
 	return(

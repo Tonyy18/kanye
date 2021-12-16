@@ -1,13 +1,15 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
 import "../App.css";
 import usage from "../usage";
 
-class DeleteButton extends Component {
-	render() {
-		return (
-			<button>Delete</button>
-		)
+const DeleteButton = (props) => {
+	const {deleteQuote} = usage();
+	const quoteDelete = () => {
+		deleteQuote(props.quoteText)
 	}
+	return (
+		<button onClick={quoteDelete}>Delete</button>
+	)
 }
 
 class Quote extends Component {
@@ -15,19 +17,32 @@ class Quote extends Component {
 	render() {
 		return (
 			<div className="quote">
-				<p>{this.props.quoteText}</p><DeleteButton/>
+				<p>{this.props.quoteText}</p><DeleteButton quoteText={this.props.quoteText}/>
+			</div>
+		)
+	}
+}
+
+class EmptyItem extends Component {
+	render() {
+		return (
+			<div className="empty">
+				<p>No Quotes</p>
 			</div>
 		)
 	}
 }
 
 const QuotesPanel = () => {
-	const {quotes} = usage();
+	const {show} = usage();
 	return (
 		<div className="quotes">
 			<h1>Quotes</h1>
-			{quotes.map((quote) => {
-				return (<Quote quoteText={quote} />)
+			{show.length === 0 &&
+				<EmptyItem />
+			}
+			{show.map((quote, index) => {
+				return (<Quote key={quote + "-" + index} quoteText={quote} />)
 			})}
 		</div>
 	)
