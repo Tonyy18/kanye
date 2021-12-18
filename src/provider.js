@@ -6,7 +6,8 @@ const AppProvider = ({children}) => {
 	const [state, setState] = useState({
 		quotes: [],
 		show: [],
-		filtered: false
+		filtered: false,
+		filterValue: 0
 	});
 	
 	return(

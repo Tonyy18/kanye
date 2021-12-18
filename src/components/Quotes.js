@@ -12,7 +12,6 @@ const DeleteButton = (props) => {
 }
 
 class Quote extends Component {
-	
 	render() {
 		return (
 			<div className="quote">

@@ -14,13 +14,13 @@ const ButtonBox = () => {
 	)
 }
 const WordCount = () => {
-	const {filterWords} = usage();
+	const {filterQuotes} = usage();
 	
 	return (
 		<div className="box">
 			<div>
 				<p className="wordFilter">Word count filter</p>
-				<input type="number" onChange={(e) => filterWords(e.target.value)} placeholder="Filter quotes" />
+				<input type="number" onChange={(e) => filterQuotes(e.target.value)} placeholder="Filter quotes" />
 			</div>
 		</div>
 	)
